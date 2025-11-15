@@ -1,5 +1,7 @@
 // 목업 데이터: 시스템 A - 실시간 투명성 대시보드
 
+import { TimelineEvent } from '@/components/Timeline'
+
 // 1. 예산 투명성 데이터
 export const budgetData = {
   monthly: [
@@ -493,7 +495,7 @@ export const annualReports = [
 ]
 
 // 8. 타임라인 데이터
-export const timelineData = [
+export const timelineData: TimelineEvent[] = [
   {
     id: 'timeline-2024-01-20',
     date: '2024-01-20',

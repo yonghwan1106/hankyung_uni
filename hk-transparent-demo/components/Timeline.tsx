@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Calendar, TrendingUp, ExternalLink } from 'lucide-react'
 
-interface TimelineEvent {
+export interface TimelineEvent {
   id: string
   date: string
   category: string
