@@ -20,6 +20,12 @@ export default function Home() {
       <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            {/* Contest Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6 border-2 border-white/30">
+              <Award className="w-5 h-5" />
+              <span className="font-bold text-sm">2025 한경국립대학교 대학발전 아이디어 공모전 출품작</span>
+            </div>
+
             <h1 className="text-6xl font-black mb-6">HK투명</h1>
             <p className="text-2xl text-white/90 mb-8">
               국민이 신뢰하는 국립대학 실시간 투명성 플랫폼
