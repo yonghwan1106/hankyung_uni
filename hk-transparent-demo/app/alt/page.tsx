@@ -17,7 +17,7 @@ export default function AlternativeHome() {
   return (
     <div className="min-h-screen">
       {/* Fullscreen Hero Section with Background Image */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 md:py-0">
         {/* Background Image Layer */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -43,58 +43,58 @@ export default function AlternativeHome() {
         {/* Hero Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           {/* Contest Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-3 rounded-full mb-8 border-2 border-white/40 animate-fade-in">
-            <Award className="w-5 h-5" />
-            <span className="font-bold text-sm">2025 한경국립대학교 대학발전 아이디어 공모전 출품작</span>
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-full mb-6 md:mb-8 border-2 border-white/40 animate-fade-in">
+            <Award className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="font-bold text-xs md:text-sm">2025 한경국립대학교 대학발전 아이디어 공모전 출품작</span>
           </div>
 
-          <h1 className="text-7xl md:text-8xl font-black mb-6 animate-fade-in-up opacity-0">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-4 md:mb-6 animate-fade-in-up opacity-0 leading-tight">
             HK투명
           </h1>
 
-          <p className="text-3xl md:text-4xl text-white/95 mb-4 font-bold animate-fade-in-up animation-delay-100 opacity-0">
+          <p className="text-2xl sm:text-3xl md:text-4xl text-white/95 mb-3 md:mb-4 font-bold animate-fade-in-up animation-delay-100 opacity-0">
             국민이 신뢰하는 국립대학
           </p>
 
-          <p className="text-xl md:text-2xl text-white/80 mb-12 animate-fade-in-up animation-delay-200 opacity-0">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-8 md:mb-12 animate-fade-in-up animation-delay-200 opacity-0 px-4">
             실시간 투명성 플랫폼으로 함께 만드는 미래
           </p>
 
           {/* Key Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-12 animate-fade-in-up animation-delay-300 opacity-0">
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-              <div className="text-5xl font-black mb-2">{kpiData.overall.transparency.toFixed(1)}</div>
-              <div className="text-sm text-white/90 font-semibold">투명성 지수</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-4xl mx-auto mb-8 md:mb-12 animate-fade-in-up animation-delay-300 opacity-0">
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{kpiData.overall.transparency.toFixed(1)}</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">투명성 지수</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-              <div className="text-5xl font-black mb-2">{budgetData.executionRate.toFixed(1)}%</div>
-              <div className="text-sm text-white/90 font-semibold">예산 집행률</div>
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{budgetData.executionRate.toFixed(1)}%</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">예산 집행률</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-              <div className="text-5xl font-black mb-2">{researchData.papers.total}</div>
-              <div className="text-sm text-white/90 font-semibold">연구 논문</div>
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{researchData.papers.total}</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">연구 논문</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-              <div className="text-5xl font-black mb-2">{studentData.employment.overall}%</div>
-              <div className="text-sm text-white/90 font-semibold">취업률</div>
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{studentData.employment.overall}%</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">취업률</div>
             </div>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-400 opacity-0">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center animate-fade-in-up animation-delay-400 opacity-0 px-4">
             <Link
               href="/dashboard/overview"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl flex items-center gap-2"
+              className="w-full sm:w-auto bg-white text-blue-600 px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl flex items-center justify-center gap-2"
             >
               통합 대시보드 보기
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
             </Link>
             <Link
               href="/participate/vote"
-              className="bg-white/10 backdrop-blur-md border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all hover:scale-105 flex items-center gap-2"
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-md border-2 border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-white/20 transition-all hover:scale-105 flex items-center justify-center gap-2"
             >
               시민 참여하기
-              <Users className="w-5 h-5" />
+              <Users className="w-4 h-4 md:w-5 md:h-5" />
             </Link>
           </div>
 
