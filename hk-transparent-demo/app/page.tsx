@@ -11,7 +11,7 @@ import {
   ideasData,
   monthlyReports,
 } from '@/lib/mockData'
-import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -263,6 +263,56 @@ export default function Home() {
                 최신: 2023년 보고서
               </div>
             </Link>
+          </div>
+        </section>
+
+        {/* 공모전 정보 및 데이터 안내 */}
+        <section className="mt-24 mb-12">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* 공모전 정보 */}
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 border-l-4 border-blue-600 shadow-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Award className="w-8 h-8 text-blue-600" />
+                <h3 className="text-2xl font-bold text-stone-900">2025년 대학발전 아이디어 공모전</h3>
+              </div>
+              <p className="text-stone-700 mb-4 leading-relaxed">
+                본 프로젝트는 <strong className="text-blue-700">한경국립대학교 2025년 대학발전 아이디어 공모전</strong>에 제출하는 제안서입니다.
+              </p>
+              <div className="bg-white/60 p-4 rounded-lg mb-3">
+                <p className="text-sm font-bold text-stone-900 mb-2">『열린 대학, 함께 하는 대학, 미래로 가는 대학』</p>
+                <ul className="text-sm text-stone-700 space-y-1">
+                  <li>• <strong>주제:</strong> 국민으로부터 신뢰받는 국립대학</li>
+                  <li>• <strong>목표:</strong> 운영 시스템의 공정성 및 투명성 확대 방안</li>
+                  <li>• <strong>접수기간:</strong> 2025. 11. 3.(월) ~ 11. 20.(목)</li>
+                </ul>
+              </div>
+              <p className="text-xs text-stone-600 italic">
+                한경국립대학교 기획평가과 주관 (2025.10.29 공고)
+              </p>
+            </div>
+
+            {/* 데이터 안내 */}
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 border-l-4 border-amber-600 shadow-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Info className="w-8 h-8 text-amber-600" />
+                <h3 className="text-2xl font-bold text-stone-900">데이터 안내</h3>
+              </div>
+              <p className="text-stone-700 mb-4 leading-relaxed">
+                본 플랫폼에 표시된 <strong className="text-amber-700">모든 수치와 데이터는 시연용 가상 데이터</strong>입니다.
+              </p>
+              <div className="bg-white/60 p-4 rounded-lg mb-3">
+                <p className="text-sm font-bold text-stone-900 mb-2">📊 가상 데이터 포함 항목</p>
+                <ul className="text-sm text-stone-700 space-y-1">
+                  <li>• 예산 집행률, 연구 성과, 취업률 등 KPI 지표</li>
+                  <li>• 투표 참여 수, Q&A 내용, 아이디어 제안</li>
+                  <li>• 월간/분기/연간 리포트 데이터</li>
+                  <li>• 타임라인 이벤트 및 활동 내역</li>
+                </ul>
+              </div>
+              <p className="text-xs text-stone-600 italic">
+                실제 운영 시 한경국립대학교의 정식 데이터로 대체됩니다.
+              </p>
+            </div>
           </div>
         </section>
       </div>
