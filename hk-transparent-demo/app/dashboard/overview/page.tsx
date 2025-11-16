@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { kpiData, budgetData, researchData, studentData, communityData, environmentData, universityComparison, timelineData } from '@/lib/mockData'
 import { BarChart, Bar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { TrendingUp, Award, DollarSign, Target } from 'lucide-react'
+import { TrendingUp, Award, DollarSign, Target, BarChart3, FlaskConical, GraduationCap, Users, Leaf, ArrowRight } from 'lucide-react'
 import Skeleton from '@/components/Skeleton'
 import Timeline from '@/components/Timeline'
 import { useCountUp } from '@/hooks/useCountUp'
@@ -75,11 +76,75 @@ export default function OverviewDashboard() {
     <div className="min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h1 className="text-5xl font-black text-stone-900 mb-4">통합 KPI 대시보드</h1>
           <p className="text-xl text-stone-600">
             한경국립대학교의 모든 지표를 한눈에
           </p>
+        </div>
+
+        {/* Dashboard Category Navigation */}
+        <div className="mb-12 bg-white p-6 shadow-lg rounded-lg">
+          <h2 className="text-lg font-bold text-stone-900 mb-4 flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-blue-600" />
+            세부 대시보드
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <Link
+              href="/dashboard/budget"
+              className="group bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 border-2 border-blue-200 hover:border-blue-400"
+            >
+              <DollarSign className="w-8 h-8 text-blue-600 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="font-bold text-stone-900 mb-1">예산 투명성</div>
+              <div className="text-xs text-stone-600 flex items-center gap-1">
+                자세히 보기 <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link
+              href="/dashboard/research"
+              className="group bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 border-2 border-green-200 hover:border-green-400"
+            >
+              <FlaskConical className="w-8 h-8 text-green-600 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="font-bold text-stone-900 mb-1">연구 성과</div>
+              <div className="text-xs text-stone-600 flex items-center gap-1">
+                자세히 보기 <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link
+              href="/dashboard/students"
+              className="group bg-gradient-to-br from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 border-2 border-orange-200 hover:border-orange-400"
+            >
+              <GraduationCap className="w-8 h-8 text-orange-600 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="font-bold text-stone-900 mb-1">학생 지원</div>
+              <div className="text-xs text-stone-600 flex items-center gap-1">
+                자세히 보기 <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link
+              href="/dashboard/community"
+              className="group bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 border-2 border-purple-200 hover:border-purple-400"
+            >
+              <Users className="w-8 h-8 text-purple-600 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="font-bold text-stone-900 mb-1">지역 기여</div>
+              <div className="text-xs text-stone-600 flex items-center gap-1">
+                자세히 보기 <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+
+            <Link
+              href="/dashboard/environment"
+              className="group bg-gradient-to-br from-teal-50 to-teal-100 hover:from-teal-100 hover:to-teal-200 p-6 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 border-2 border-teal-200 hover:border-teal-400"
+            >
+              <Leaf className="w-8 h-8 text-teal-600 mb-3 group-hover:scale-110 transition-transform" />
+              <div className="font-bold text-stone-900 mb-1">환경 ESG</div>
+              <div className="text-xs text-stone-600 flex items-center gap-1">
+                자세히 보기 <ArrowRight className="w-3 h-3" />
+              </div>
+            </Link>
+          </div>
         </div>
 
         {isLoading ? (
