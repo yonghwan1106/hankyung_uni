@@ -16,19 +16,28 @@ import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, Messag
 export default function AlternativeHome() {
   return (
     <div className="min-h-screen">
-      {/* Fullscreen Hero Section with Background Image */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          {/* Placeholder for university campus image */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-purple-900/90 to-green-900/95 z-10"></div>
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80)',
-              filter: 'brightness(0.4)'
-            }}
-          ></div>
+      {/* Fullscreen Hero Section with Background */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-green-900">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 z-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.5) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.5) 0%, transparent 50%),
+              radial-gradient(circle at 40% 20%, rgba(34, 197, 94, 0.5) 0%, transparent 50%),
+              linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%)
+            `,
+            backgroundSize: 'cover',
+            animation: 'pulse 8s ease-in-out infinite'
+          }}></div>
+
+          {/* Geometric Pattern */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(255,255,255,0.03) 100px, rgba(255,255,255,0.03) 102px),
+              repeating-linear-gradient(-45deg, transparent, transparent 100px, rgba(255,255,255,0.03) 100px, rgba(255,255,255,0.03) 102px)
+            `
+          }}></div>
         </div>
 
         {/* Hero Content */}
