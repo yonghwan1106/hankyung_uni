@@ -11,7 +11,7 @@ import {
   ideasData,
   monthlyReports,
 } from '@/lib/mockData'
-import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info, ChevronDown, Download } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info, ChevronDown, ExternalLink } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -375,7 +375,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 제안서 다운로드 */}
+        {/* 제안서 보기 */}
         <section className="mt-12 mb-24">
           <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 p-1 rounded-2xl shadow-xl">
             <div className="bg-white p-8 rounded-xl">
@@ -386,17 +386,18 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-stone-900 mb-1">HK투명 프로젝트 제안서</h3>
-                    <p className="text-stone-600">상세한 제안 내용을 PDF로 확인하세요</p>
+                    <p className="text-stone-600">상세한 제안 내용을 확인하세요</p>
                   </div>
                 </div>
                 <a
                   href="/HK투명_제안서.html"
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-3 group"
                 >
-                  <Download className="w-5 h-5" />
-                  제안서 다운로드
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <FileText className="w-5 h-5" />
+                  제안서 보기
+                  <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </a>
               </div>
             </div>
