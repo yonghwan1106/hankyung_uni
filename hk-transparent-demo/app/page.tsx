@@ -11,43 +11,96 @@ import {
   ideasData,
   monthlyReports,
 } from '@/lib/mockData'
-import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info, ChevronDown } from 'lucide-react'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-green-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            {/* Contest Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6 border-2 border-white/30">
-              <Award className="w-5 h-5" />
-              <span className="font-bold text-sm">2025 한경국립대학교 대학발전 아이디어 공모전 출품작</span>
-            </div>
+      {/* Fullscreen Hero Section with Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 md:py-0">
+        {/* Background Image Layer */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1920&q=80)'
+          }}
+        ></div>
 
-            <h1 className="text-6xl font-black mb-6">HK투명</h1>
-            <p className="text-2xl text-white/90 mb-8">
-              국민이 신뢰하는 국립대학 실시간 투명성 플랫폼
-            </p>
-            <div className="grid md:grid-cols-4 gap-6 mt-12">
-              <div className="bg-white/10 p-6 backdrop-blur">
-                <div className="text-4xl font-black mb-2">{kpiData.overall.transparency.toFixed(1)}</div>
-                <div className="text-sm text-white/80">투명성 지수</div>
-              </div>
-              <div className="bg-white/10 p-6 backdrop-blur">
-                <div className="text-4xl font-black mb-2">{budgetData.executionRate.toFixed(1)}%</div>
-                <div className="text-sm text-white/80">예산 집행률</div>
-              </div>
-              <div className="bg-white/10 p-6 backdrop-blur">
-                <div className="text-4xl font-black mb-2">{researchData.papers.total}</div>
-                <div className="text-sm text-white/80">연구 논문</div>
-              </div>
-              <div className="bg-white/10 p-6 backdrop-blur">
-                <div className="text-4xl font-black mb-2">{studentData.employment.overall}%</div>
-                <div className="text-sm text-white/80">취업률</div>
-              </div>
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 z-10 bg-black/50"></div>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-green-900/80"></div>
+
+        {/* Subtle Pattern Overlay */}
+        <div className="absolute inset-0 z-10 opacity-10" style={{
+          backgroundImage: `
+            repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(255,255,255,0.1) 100px, rgba(255,255,255,0.1) 102px),
+            repeating-linear-gradient(-45deg, transparent, transparent 100px, rgba(255,255,255,0.1) 100px, rgba(255,255,255,0.1) 102px)
+          `
+        }}></div>
+
+        {/* Hero Content */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+          {/* Contest Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 md:px-6 md:py-3 rounded-full mb-6 md:mb-8 border-2 border-white/40 animate-fade-in">
+            <Award className="w-4 h-4 md:w-5 md:h-5" />
+            <span className="font-bold text-xs md:text-sm">2025 한경국립대학교 대학발전 아이디어 공모전 출품작</span>
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-4 md:mb-6 animate-fade-in-up opacity-0 leading-tight">
+            HK투명
+          </h1>
+
+          <p className="text-2xl sm:text-3xl md:text-4xl text-white/95 mb-3 md:mb-4 font-bold animate-fade-in-up animation-delay-100 opacity-0">
+            국민이 신뢰하는 국립대학
+          </p>
+
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-8 md:mb-12 animate-fade-in-up animation-delay-200 opacity-0 px-4">
+            실시간 투명성 플랫폼으로 함께 만드는 미래
+          </p>
+
+          {/* Key Metrics */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-4xl mx-auto mb-8 md:mb-12 animate-fade-in-up animation-delay-300 opacity-0">
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{kpiData.overall.transparency.toFixed(1)}</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">투명성 지수</div>
             </div>
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{budgetData.executionRate.toFixed(1)}%</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">예산 집행률</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{researchData.papers.total}</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">연구 논문</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md p-4 md:p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black mb-1 md:mb-2">{studentData.employment.overall}%</div>
+              <div className="text-xs md:text-sm text-white/90 font-semibold">취업률</div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center animate-fade-in-up animation-delay-400 opacity-0 px-4">
+            <Link
+              href="/dashboard/overview"
+              className="w-full sm:w-auto bg-white text-blue-600 px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl flex items-center justify-center gap-2"
+            >
+              통합 대시보드 보기
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+            </Link>
+            <Link
+              href="/participate/vote"
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-md border-2 border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-white/20 transition-all hover:scale-105 flex items-center justify-center gap-2"
+            >
+              시민 참여하기
+              <Users className="w-4 h-4 md:w-5 md:h-5" />
+            </Link>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ChevronDown className="w-8 h-8 text-white/60" />
           </div>
         </div>
       </section>
@@ -253,7 +306,7 @@ export default function Home() {
               <h3 className="text-xl font-bold text-stone-900 mb-2">분기별 타운홀</h3>
               <p className="text-stone-600 mb-4">온·오프라인 시민 타운홀</p>
               <div className="text-sm text-stone-500">
-                다음: 2024년 3월 28일
+                다음: 2025년 12월 19일
               </div>
             </Link>
 
@@ -266,7 +319,7 @@ export default function Home() {
               <h3 className="text-xl font-bold text-stone-900 mb-2">연간 성과보고서</h3>
               <p className="text-stone-600 mb-4">국민에게 드리는 보고서</p>
               <div className="text-sm text-stone-500">
-                최신: 2023년 보고서
+                최신: 2024년 보고서
               </div>
             </Link>
           </div>
@@ -323,17 +376,6 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Link to Alternative Version */}
-      <div className="bg-stone-100 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Link
-            href="/alt"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-bold"
-          >
-            풀스크린 히어로 버전 보기 →
-          </Link>
-        </div>
-      </div>
     </div>
   )
 }
