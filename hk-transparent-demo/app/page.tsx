@@ -11,7 +11,7 @@ import {
   ideasData,
   monthlyReports,
 } from '@/lib/mockData'
-import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info, ChevronDown } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Building2, Leaf, BarChart3, Vote, MessageSquare, Lightbulb, FileText, Award, Info, ChevronDown, Download } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -371,6 +371,34 @@ export default function Home() {
               <p className="text-xs text-stone-600 italic">
                 실제 운영 시 한경국립대학교의 정식 데이터로 대체됩니다.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 제안서 다운로드 */}
+        <section className="mt-12 mb-24">
+          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 p-1 rounded-2xl shadow-xl">
+            <div className="bg-white p-8 rounded-xl">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-gradient-to-br from-blue-100 to-green-100 p-4 rounded-xl">
+                    <FileText className="w-8 h-8 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-stone-900 mb-1">HK투명 프로젝트 제안서</h3>
+                    <p className="text-stone-600">상세한 제안 내용을 PDF로 확인하세요</p>
+                  </div>
+                </div>
+                <a
+                  href="/HK투명_제안서.html"
+                  download
+                  className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-3 group"
+                >
+                  <Download className="w-5 h-5" />
+                  제안서 다운로드
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
