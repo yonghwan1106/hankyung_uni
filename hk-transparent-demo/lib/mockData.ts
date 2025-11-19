@@ -196,10 +196,10 @@ export const kpiData = {
 // 1. 투표 데이터
 export const voteData = {
   current: {
-    id: 'vote-2024-01',
+    id: 'vote-2025-11',
     title: '다음 달 대학 운영 우선순위는?',
-    description: '2024년 2월 대학 운영의 우선순위를 투표해주세요',
-    deadline: '2024-01-25',
+    description: '2025년 12월 대학 운영의 우선순위를 투표해주세요',
+    deadline: '2025-11-25',
     options: [
       {
         id: 1,
@@ -241,18 +241,18 @@ export const voteData = {
   },
   history: [
     {
-      id: 'vote-2023-12',
-      title: '2024년 우선 개선 시설은?',
+      id: 'vote-2025-10',
+      title: '2025년 우선 개선 시설은?',
       winner: '도서관 리모델링',
       votes: 2847,
-      date: '2023-12-20',
+      date: '2025-10-20',
     },
     {
-      id: 'vote-2023-11',
+      id: 'vote-2025-09',
       title: '신규 평생교육 프로그램 분야는?',
       winner: 'AI/데이터 분석 교육',
       votes: 2456,
-      date: '2023-11-20',
+      date: '2025-09-20',
     },
   ],
 }

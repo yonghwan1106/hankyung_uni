@@ -20,7 +20,7 @@ export default function VotePage() {
       setIsLoading(false)
     }, 500)
 
-    const voted = localStorage.getItem('hk-voted-2025-01')
+    const voted = localStorage.getItem('hk-voted-2025-11')
     if (voted) {
       setHasVoted(true)
       const savedOption = localStorage.getItem('hk-vote-option')
@@ -65,7 +65,7 @@ export default function VotePage() {
   const handleVote = () => {
     if (selectedOption !== null) {
       // Save to localStorage
-      localStorage.setItem('hk-voted-2025-01', 'true')
+      localStorage.setItem('hk-voted-2025-11', 'true')
       localStorage.setItem('hk-vote-option', selectedOption.toString())
       localStorage.setItem('hk-vote-timestamp', new Date().toISOString())
 
